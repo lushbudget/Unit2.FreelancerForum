@@ -49,8 +49,8 @@ const renderPeople = () => {
     personTR.appendChild(startingPriceTD)
     const peopleTable = document.querySelector(`tbody`);
     peopleTable.appendChild(personTR);
-
-
+    const averageBlock = document.querySelector(`#averageBlock`)
+    averageBlock.replaceChildren(`$ ${makeAverage(people)}`);
   });
 
 }
@@ -62,8 +62,16 @@ const makeAverage = (anArrofObj) => {
     sum += curRate;
   }
   let average = sum / anArrofObj.length;
-  return average;
+  return average.toFixed(2); 
 }
+ 
+// const renderAverage = (average) => {
+//   const averageBlock = document.querySelector(`#averageBlock`);
+//   averageBlock.innerHTML(`${average}`)
+//   a
+
+
+
 
 // const personList = (person) => {
 //   for(let i = 0; i < people.length; i++) {
